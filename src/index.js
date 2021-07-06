@@ -22,17 +22,20 @@ class Quiz extends Component {
   }
 
   getQuestions = (level) => {
+    // fetching question from api
     let question = QuestionAPI(level);
     return question;
   };
 
   selectUserName = (name) => {
+    // callback function asking for name
     this.setState({
       name: name,
     });
   };
 
   selectedLevel = (level) => {
+    // callback function for selecting levels
     this.setState({
       level: level,
       questionBank: this.getQuestions(level),
@@ -40,6 +43,7 @@ class Quiz extends Component {
   };
 
   playAgain = () => {
+    // function for playing  again
     this.setState({
       score: 0,
       count: 0,
@@ -49,6 +53,7 @@ class Quiz extends Component {
   };
 
   computeAnswer = (answer, correctAns) => {
+    // function to compute answers
     if (answer === correctAns) {
       this.setState({
         score: this.state.score + 1,
@@ -60,8 +65,8 @@ class Quiz extends Component {
   };
 
   timer = () => {
+    // timer function: used for count down
     let temp = this.state.count + 1;
-    console.log("temp -->", temp);
     if (temp <= 4) {
       this.setState({
         count: temp,
@@ -79,19 +84,11 @@ class Quiz extends Component {
     }
   }
 
-  componentDidMount() {
-    // default call
-    this.setState({
-      questionBank: this.getQuestions("easy"),
-    });
-  }
-
   componentWillUnmount() {
     clearTimeout(this.timerVar);
   }
 
   render() {
-    console.log(this.state.count);
     return (
       <div className="container">
         <div className="title">QuizOn</div>
