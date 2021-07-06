@@ -132,7 +132,7 @@ class Quiz extends Component {
           )}
 
         {(this.state.name !== "" && this.state.responses === 5) ||
-        this.state.count > 11 ? (
+        this.state.count > 10 ? (
           <Result
             score={this.state.score}
             playAgain={this.playAgain}
