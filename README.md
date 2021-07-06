@@ -8,4 +8,4 @@ simple reactjs based quiz app
 answer for every question is vinayak
 timer is for 10sec
 
-<p align="center"> <img src="Screenshot from 2020-02-12 10-36-28.png" /></p>
+<p align="center"> <img src="https://github.com/itsvinayak/QuizOn/tree/master/Screenshot from 2020-02-12 10-36-28.png" /></p>
