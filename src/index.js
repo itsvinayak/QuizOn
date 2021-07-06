@@ -67,7 +67,7 @@ class Quiz extends Component {
   timer = () => {
     // timer function: used for count down
     let temp = this.state.count + 1;
-    if (temp <= 4) {
+    if (temp <= 11) {
       this.setState({
         count: temp,
       });
@@ -99,7 +99,7 @@ class Quiz extends Component {
 
         {this.state.name !== "" &&
         this.state.level !== "" &&
-        this.state.count <= 3 ? (
+        this.state.count <= 10 ? (
           <div className="levelLable">
             <b>Name :</b>
             {this.state.name}
@@ -117,7 +117,7 @@ class Quiz extends Component {
 
         {this.state.name !== "" &&
           this.state.level !== "" &&
-          this.state.count <= 3 &&
+          this.state.count <= 10 &&
           this.state.questionBank.length > 0 &&
           this.state.responses < 5 &&
           this.state.questionBank.map(
@@ -132,7 +132,7 @@ class Quiz extends Component {
           )}
 
         {(this.state.name !== "" && this.state.responses === 5) ||
-        this.state.count > 3 ? (
+        this.state.count > 11 ? (
           <Result
             score={this.state.score}
             playAgain={this.playAgain}
